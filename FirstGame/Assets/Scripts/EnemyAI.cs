@@ -8,6 +8,12 @@ public class EnemyAI : MonoBehaviour {
 	
 	}
 	
+    // Function for state as the game begins
+    void Awake ()
+    {
+
+    }
+
 	// Update is called once per frame
 	void Update () {
 	
