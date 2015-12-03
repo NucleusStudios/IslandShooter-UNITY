@@ -19,7 +19,7 @@ public class GunShoot : MonoBehaviour {
     RaycastHit shootHit;
     int shootableMask;
     
-    //ParticleSystem gunParticles;
+    ParticleSystem gunParticles;
     LineRenderer gunLine;
     AudioSource gunAudio;
     Light gunLight;
@@ -29,7 +29,7 @@ public class GunShoot : MonoBehaviour {
     {
         //returns the number of the shootable layer
         //shootableMask = LayerMask.GetMask("Shootable");
-        //gunParticles = GetComponent<ParticleSystem>();
+        gunParticles = GetComponent<ParticleSystem>();
         gunLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
@@ -69,8 +69,8 @@ public class GunShoot : MonoBehaviour {
         timer = 0f;
         gunAudio.Play();
         gunLight.enabled = true;
-        //gunPartices.Stop();
-        //gunParticles.Play();
+        gunParticles.Stop();
+        gunParticles.Play();
         gunLine.enabled = true;
         gunLine.SetPosition(0, transform.position);
         shootRay.origin = transform.position;
